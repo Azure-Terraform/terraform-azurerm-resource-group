@@ -67,7 +67,7 @@ resource "azurerm_policy_assignment" "tags" {
     "product_group",
     "product_name"])
 
-  name                 = "policy-tags-${local.resource_group_name}"
+  name                 = "policy-tags-${each.key}"
   scope                = azurerm_resource_group.rg.id
   policy_definition_id = azurerm_policy_definition.tags.id
   description          = "Policy Assignment to inherit ${each.key} tag from Resource Group"
