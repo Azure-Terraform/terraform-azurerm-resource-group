@@ -60,7 +60,6 @@ resource "azurerm_policy_assignment" "tags" {
     "project",
     "subscription_id",
     "business_unit", 
-    "cost_center",
     "sre_team",
     "resource_group_type",
     "subscription_type",
