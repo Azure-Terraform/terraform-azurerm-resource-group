@@ -22,6 +22,7 @@ Naming for this resource is as follows, based on published RBA naming convention
 | location | Azure Region | `string` | n/a | yes |
 | names | Names to be applied to resources (inclusive) | <pre>object({<br>                  environment         = string<br>                  location            = string<br>                  market              = string<br>                  product_name        = string<br>                  resource_group_type = string<br>                })</pre> | n/a | yes |
 | tags | Tags to be applied to resources (inclusive) | `map(string)` | n/a | yes |
+| unique_name | If true, the resource group name will be appended with 5 random integers | `bool` | false | no |
 
 ## Outputs
 
