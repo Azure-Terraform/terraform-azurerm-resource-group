@@ -14,7 +14,7 @@ Naming for this resource is as follows, based on published RBA naming convention
 | Name | Version |
 |------|---------|
 | azurerm | >= 2.0.0 |
-| random | n/a |
+| random | >= 2.0.0 |
 
 ## Inputs
 
