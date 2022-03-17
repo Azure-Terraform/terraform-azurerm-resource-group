@@ -9,9 +9,9 @@ variable "tags" {
 }
 
 variable "unique_name" {
-  description = "If true, the resource group name will be appended with 5 random integers"
-  type        = bool
-  default     = false
+  description = "Freeform input to append to resource group name. Set to 'true', to append 5 random integers"
+  type        = string
+  default     = null
 }
 
 variable "names" {
