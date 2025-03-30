@@ -14,6 +14,12 @@ variable "unique_name" {
   default     = null
 }
 
+variable "resource_type" {
+  description = "Resource type"
+  type        = string
+  default = ""
+}
+
 variable "names" {
   description = "Names to be applied to resources (inclusive)"
   type        = object({
