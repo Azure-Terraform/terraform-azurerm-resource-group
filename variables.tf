@@ -17,12 +17,12 @@ variable "unique_name" {
 variable "resource_type" {
   description = "Resource type e.g rg"
   type        = string
-  default = ""
+  default     = ""
 }
 
 variable "names" {
   description = "Names to be applied to resources (inclusive)"
-  type        = object({
+  type = object({
     environment         = string
     location            = string
     market              = string
