@@ -15,7 +15,7 @@ variable "unique_name" {
 }
 
 variable "resource_type" {
-  description = "Resource type"
+  description = "Resource type e.g rg"
   type        = string
   default = ""
 }
