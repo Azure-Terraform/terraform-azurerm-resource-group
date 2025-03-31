@@ -4,14 +4,14 @@ jobs:
   docs:
     runs-on: ubuntu-latest
     steps:
-    - uses: actions/checkout@v2
+    - uses: actions/checkout@v4
       with:
         ref: ${{ github.event.pull_request.head.ref }}
 
     - name: Render terraform docs inside the USAGE.md and push changes back to PR branch
-      uses: Dirrk/terraform-docs@v1.0.7
+      uses: terraform-docs/gh-actions@v1.3.0
       with:
-        tf_docs_working_dir: .
-        tf_docs_output_file: README.md
-        tf_docs_output_method: inject
-        tf_docs_git_push: 'true'
+        working_dir: .
+        output_file: README.md
+        output_method: inject
+        git_push: 'true'
