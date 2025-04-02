@@ -14,8 +14,8 @@ variable "unique_name" {
   default     = null
 }
 
-variable "resource_type" {
-  description = "Resource type e.g rg"
+variable "name_suffix" {
+  description = "name suffix e.g rg, blue etc"
   type        = string
   default     = ""
 }
