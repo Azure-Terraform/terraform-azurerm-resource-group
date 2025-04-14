@@ -1,7 +1,11 @@
 name: Generate terraform docs
-on: [push, pull_request]
+on:
+  - push
+  - pull_request
+
 permissions:
-  contents: read
+  contents: write
+
 jobs:
   docs:
     runs-on: ubuntu-latest
