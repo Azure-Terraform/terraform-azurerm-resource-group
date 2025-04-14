@@ -9,11 +9,13 @@ jobs:
     - uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 # v4.2.2
       with:
         ref: ${{ github.event.pull_request.head.ref }}
+        ref: ${{ github.event.pull_request.head.ref }}
+
 
     - name: Render terraform docs inside the USAGE.md and push changes back to PR branch
-      uses: terraform-docs/gh-actions@7f8a667921aee9dd89af0f3c6dfa6160d7ebd8bb # v1.4.0
-      with:
-        working_dir: .
-        output_file: README.md
+        working-dir: .
+        output-file: README.md
+        output-method: inject
+        git-push: 'true'
         output_method: inject
         git_push: 'true'
