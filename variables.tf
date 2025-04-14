@@ -14,9 +14,15 @@ variable "unique_name" {
   default     = null
 }
 
+variable "name_suffix" {
+  description = "name suffix e.g rg, blue etc"
+  type        = string
+  default     = ""
+}
+
 variable "names" {
   description = "Names to be applied to resources (inclusive)"
-  type        = object({
+  type = object({
     environment         = string
     location            = string
     market              = string

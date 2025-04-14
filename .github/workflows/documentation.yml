@@ -1,5 +1,7 @@
 name: Generate terraform docs
 on: [push, pull_request]
+permissions:
+  contents: read
 jobs:
   docs:
     runs-on: ubuntu-latest
@@ -7,11 +9,17 @@ jobs:
     - uses: actions/checkout@v2
       with:
         ref: ${{ github.event.pull_request.head.ref }}
+    
+    - name: Retry fetching repository
+      run: |
+        for i in {1..5}; do
+          git fetch --no-tags --prune --no-recurse-submodules --depth=1 origin +refs/heads/resource-type-suffix-support*:refs/remotes/origin/resource-type-suffix-support* +refs/tags/resource-type-suffix-support*:refs/tags/resource-type-suffi && break || sleep 15;
+        done
 
     - name: Render terraform docs inside the USAGE.md and push changes back to PR branch
-      uses: Dirrk/terraform-docs@v1.0.7
+      uses: terraform-docs/gh-actions@aeae0038ed47a547e0c0fca5c059d3335f48fb25 
       with:
-        tf_docs_working_dir: .
-        tf_docs_output_file: README.md
-        tf_docs_output_method: inject
-        tf_docs_git_push: 'true'
+        working_dir: .
+        output_file: README.md
+        output_method: inject
+        git_push: 'true'
